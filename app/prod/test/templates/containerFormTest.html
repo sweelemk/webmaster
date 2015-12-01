@@ -1,0 +1,12 @@
+<div class="form__container">
+	<div class="title-form">Выберите один варинат ответа</div>
+	<div class="question" id="{{id_question}}">{{quest}}</div>
+	<div class="answers">
+		<ul>
+			{{#each options}}
+				<li><input type="radio" name="option" id="answer_{{id_answer}}"><label for="answer_{{id_answer}}">{{answer}}</label></li>
+			{{/each}}
+				
+		</ul>
+	</div>
+</div>

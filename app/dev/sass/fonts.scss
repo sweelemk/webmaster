@@ -1,0 +1,359 @@
+@font-face {
+	font-family: 'pt_serifbold';
+		src: url('../fonts/ptserif-bold-webfont.eot');
+		src: url('../fonts/ptserif-bold-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/ptserif-bold-webfont.woff2') format('woff2'),
+			 url('../fonts/ptserif-bold-webfont.woff') format('woff'),
+			 url('../fonts/ptserif-bold-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'pt_serifbold_italic';
+		src: url('../fonts/ptserif-bold-italic-webfont.eot');
+		src: url('../fonts/ptserif-bold-italic-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/ptserif-bold-italic-webfont.woff2') format('woff2'),
+			 url('../fonts/ptserif-bold-italic-webfont.woff') format('woff'),
+			 url('../fonts/ptserif-bold-italic-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'pt_serifitalic';
+		src: url('../fonts/ptserif-italic-webfont.eot');
+		src: url('../fonts/ptserif-italic-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../fonts/ptserif-italic-webfont.woff2') format('woff2'),
+			 url('../fonts/ptserif-italic-webfont.woff') format('woff'),
+			 url('../fonts/ptserif-italic-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'pt_serifregular';
+	src: url('../fonts/ptserif-webfont.eot');
+	src: url('../fonts/ptserif-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/ptserif-webfont.woff2') format('woff2'),
+		 url('../fonts/ptserif-webfont.woff') format('woff'),
+		 url('../fonts/ptserif-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'pf_agora_slab_problack';
+	src: url('../fonts/pfagoraslabpro-black_1-webfont.eot');
+	src: url('../fonts/pfagoraslabpro-black_1-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/pfagoraslabpro-black_1-webfont.woff2') format('woff2'),
+		 url('../fonts/pfagoraslabpro-black_1-webfont.woff') format('woff'),
+		 url('../fonts/pfagoraslabpro-black_1-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+
+}
+@font-face {
+	font-family: 'FuturaNewBold';
+	src: url('../fonts/FuturaNewBold.eot');
+	src: url('../fonts/FuturaNewBold.woff') format('woff'), 
+		 url('../fonts/FuturaNewBold.ttf') format('truetype'), 
+		 url('../fonts/FuturaNewBold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FuturaNewBook';
+	src: url('../fonts/FuturaNewBook.woff') format('woff'), 
+		 url('../fonts/FuturaNewBook.ttf') format('truetype'), 
+		 url('../fonts/FuturaNewBook.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FuturaNewDemi';
+	src: url('../fonts/FuturaNewDemi.eot');
+	src: url('../fonts/FuturaNewDemi.woff') format('woff'), 
+		 url('../fonts/FuturaNewDemi.ttf') format('truetype'), 
+		 url('../fonts/FuturaNewDemi.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FuturaNewHeavy';
+	src: url('../fonts/FuturaNewHeavy.eot');
+	src: url('../fonts/FuturaNewHeavy.woff') format('woff'), 
+		 url('../fonts/FuturaNewHeavy.ttf') format('truetype'), 
+		 url('../fonts/FuturaNewHeavy.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FuturaNewMedium';
+	src: url('../fonts/FuturaNewMedium.eot');
+	src: url('../fonts/FuturaNewMedium.woff') format('woff'), 
+		 url('../fonts/FuturaNewMedium.ttf') format('truetype'), 
+		 url('../fonts/FuturaNewMedium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+$PTserifregular: 'pt_serifregular', Arial, sans-serif;
+$PTserifItalic: 'pt_serifitalic', Arial, sans-serif;
+$PTserifItalicBold: 'pt_serifbold_italic', Arial, sans-serif;
+$PTserifBold: 'pt_serifbold', Arial, sans-serif;
+$FuturaNewBold: 'FuturaNewBold', Arial, sans-serif;
+$FuturaNewBook: 'FuturaNewBook', Arial, sans-serif;
+$FuturaNewDemi: 'FuturaNewDemi', Arial, sans-serif;
+$FuturaNewHeavy: 'FuturaNewHeavy', Arial, sans-serif;
+$FuturaNewMedium: 'FuturaNewMedium', Arial, sans-serif;
+
+html {
+	text-size-adjust: 100%;
+	font-size: 100%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-kerning: normal;
+}
+i {
+	font-family: $PTserifItalic;
+}
+.header {
+	.phone__cover {
+		.phone {
+			span {
+				font-family: $FuturaNewHeavy;
+				font-size: 1.125em; //18px / 16px
+			}
+		}
+	}
+	.nav {
+		li {
+			a {
+				font-family: $FuturaNewHeavy;
+				font-size: 0.6875em; // 11px / 16px
+			}
+		}
+	}
+}
+.preview {
+	.preview__cover {
+		.preview__title {
+			font-family: $FuturaNewHeavy;
+			font-size: 3.875em; // 62px / 16px
+		}
+		.sub__title {
+			font-family: $PTserifregular;
+			font-size: 1.5em; // 24px / 16px
+		}
+	}
+}
+.btn {
+	span {
+		font-family: $FuturaNewBold;
+		font-size: 0.6875em; // 11px / 16px
+	}
+}
+.how__section {
+	.title {
+		font-family: $FuturaNewDemi;
+		font-size: 2.25em; // 36px / 16px
+	}
+	.work__list {
+		.work__item {
+			.title {
+				font-size: 1.875em; // 30px / 16px
+			}
+			.descr {
+				font-family: $PTserifregular;
+				font-size: 0.9375em; // 15px / 16px
+			}
+		}
+	}
+}
+.carte__section {
+	.title {
+		font-family: $FuturaNewDemi;
+		font-size: 2.25em; // 36px / 16px
+	}
+	.time {
+		font-family: $FuturaNewDemi;
+		font-size: 1.5em; // 24px / 16px
+	}
+	.descr {
+		font-family: $PTserifregular;
+		font-size: 0.9375em; // 15px / 16px
+		i {
+			font-family: $PTserifItalicBold;
+		}
+	}
+	.card__container {
+		.cover {
+			font-family: $FuturaNewBook;
+			font-size: 1.125em; // 18px / 16px
+		}
+		.title {
+			font-family: $FuturaNewDemi;
+			font-size: 1.5em; // 24px / 16px 
+		}
+		.time {
+			font-family: $PTserifregular;
+			font-size: 0.9375em; // 15px / 16px
+		}
+	}
+}
+.fancybox-inner {
+	.items {
+		.title {
+			font-family: $FuturaNewBold;
+			font-size: 1.875em; // 30px / 16px
+		}
+		.time {
+			font-family: $PTserifregular;
+			font-size: 0.875em; // 14px / 16px
+		}
+		.ingredient__list {
+			.ingredient__item {
+				span {
+					font-family: $PTserifItalic;
+					font-size: 0.75em; // 12px / 16px
+				}
+			}
+		}
+	}
+}
+.title-2 {
+	font-family: $FuturaNewBold;
+	font-size: 1.5em; // 24px /16px
+}
+.bullet {
+	li {
+		font-family: $PTserifregular;
+		font-size: 0.875em; // 14px / 16px
+	}
+}
+.why__section {
+	.title {
+		font-family: $FuturaNewBold;
+		font-size: 2.25em; // 36px / 16px
+	}
+	.descr {
+		font-family: $PTserifregular;
+		font-size: 1.125em; // 18px / 16px
+		i {
+			font-family: $PTserifItalic;
+		}
+	}
+	.why__list {
+		.why__item {
+			.title {
+				font-family: $FuturaNewDemi;
+				font-size: 1.5em; // 24px / 16px
+			}
+			.descr {
+				font-family: $PTserifregular;
+				font-size: 0.9375em; // 15px / 16px
+			}
+		}
+	}
+}
+.insta__section {
+	.hash {
+		font-family: $PTserifItalic;
+		font-size: 1em; // 16px / 16px
+	}
+}
+.footer {
+	.footer__row {
+		.form {
+			span {
+				font-family: $FuturaNewHeavy;
+				font-size: 0.6875em; // 11px / 16px
+			}
+			.field__row {
+				.input {
+					font-family: $PTserifregular;
+					font-size: 0.75em; // 12px / 16px
+				}
+			}
+		}
+		.footer__nav {
+			li {
+				a {
+					font-family: $FuturaNewHeavy;
+					font-size: 0.6875em; //11px / 16px
+				}
+			}
+		}
+	}
+}
+.popup {
+	.select__price {
+		.price {
+			span {
+				font-family: $PTserifregular;
+				font-size: 1.5em; // 24px / 16px
+			}
+		}
+	}
+	.popup__body {
+		.btn-next {
+			font-family: $FuturaNewBold;
+			font-size: 0.875em; // 14px / 16px
+		}
+		.form__success {
+			.title {
+				font-family: $FuturaNewBold;
+				font-size: 2.25em; // 36px / 16px
+			}
+			p {
+				font-family: $PTserifregular;
+				font-size: 0.9375em; // 14px / 16px
+			}
+			.sucess__close {
+				font-family: $FuturaNewBold;
+				font-size: 0.9375em; // 14px / 16px
+			}
+		}
+	}
+}
+.form__wrap {
+	.nav__tab {
+		li {
+			a {
+				font-family: $FuturaNewBold;
+				font-size: 2.25em; // 36px / 16px
+			}
+		}
+	}
+	.steps {
+		li {
+			a {
+				font-family: $FuturaNewBold;
+				font-size: 0.8125em; // 13px / 16px
+			}
+		}
+	}
+	.form {
+		.field {
+			.field__title {
+				font-family: $FuturaNewBold;
+				font-size: 0.6875em; // 11px / 16px
+			}
+			.input {
+				font-family: $PTserifregular;
+				font-size: 0.875em; // 14px / 16px
+			}
+			&.radio {
+				.field__body {
+					span {
+						font-family: $PTserifItalic;
+						font-size: 1.125em; // 18px / 16px
+					}
+				}
+			}
+		}
+	}
+	.title {
+		font-family: $FuturaNewBold;
+		font-size: 2.25em; // 36px / 16px
+	}
+}

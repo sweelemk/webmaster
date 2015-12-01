@@ -1,0 +1,16 @@
+{
+  "name": "ihouse",
+  "version": "1.0.0",
+  "description": "international house",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "author": "flxmd.by",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}
