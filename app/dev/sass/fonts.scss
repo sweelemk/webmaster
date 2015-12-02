@@ -189,6 +189,13 @@ i {
 		.cover {
 			font-family: $FuturaNewBook;
 			font-size: 1.125em; // 18px / 16px
+			&.form-data {
+					.btn {
+						span {
+							font-size: 0.6875em; // 11px / 16px
+						}
+					}
+				}
 		}
 		.title {
 			font-family: $FuturaNewDemi;
@@ -355,5 +362,25 @@ i {
 	.title {
 		font-family: $FuturaNewBold;
 		font-size: 2.25em; // 36px / 16px
+	}
+}
+.tab__menu {
+	.tab__list {
+		li {
+			a {
+				font-family: $FuturaNewHeavy;
+				font-size: 1.5em; // 24px / 16px
+			}
+		}
+	}
+	.tab__menu-container {
+		.tab-item {
+			label {
+				span {
+					font-family: $PTserifregular;
+					font-size: 1.125em; // 18px / 16px
+				}
+			}
+		}
 	}
 }
