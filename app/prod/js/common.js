@@ -98,6 +98,10 @@ $(document).ready(function () {
 			html = $('html');
 		
 		$('.js-popup-link').on('click', function(event){
+			if(!$(this).hasClass('.js-popup-data')){
+				tabs();
+				//return false;
+			}
 			var popup = $(this).data('href');
 
 			html.addClass('space');
@@ -132,7 +136,7 @@ $(document).ready(function () {
 
 
 	//tab menu
-	(function(){
+	function tabs(){
 		$(".tab__list").each(function(){
 			var tab_link = $(this).find("a"),
 				tab_item = $(this).find("li"),
@@ -153,20 +157,21 @@ $(document).ready(function () {
 
 				return false;
 			});
-			if(!$(this).parent().hasClass('popup-checked')){
+			//if(!$(this).parent().hasClass('popup-checked')){
 				tab_item.first().addClass("is-active");
 				parents.find("."+index).show();
 				setTimeout(function(){
 	        	   		parents.find("."+index).addClass('visible')
 	        	}, 10);
-			}
+			//}
 			// tab_item.first().addClass("is-active");
 			// parents.find("."+index).show();
 			// setTimeout(function(){
    //      	   		parents.find("."+index).addClass('visible')
    //      	}, 10);	
 		});
-	})();
+	};
+	tabs();
 
 	(function(){
 		$('.js-popup-data').on('click', function(){
@@ -177,17 +182,17 @@ $(document).ready(function () {
 				cont = par.find('.tab__menu-container'),
 				contData = cont.find('.visible').find('input:checked').data('days');
 
-				console.log('Person' + menuData, 'days' + contData)
+				//console.log('Person' + menuData, 'days' + contData)
 
 				var tab = $('.popup-checked').find('a[data-person = "' + menuData +'-popup"]'),
 					check = $('.popup-checked').find('#' + contData +'-popup'),
 					checkVal = check.data('price'),
 					select = $('.select__price').find('.price span');
 
-				$('.popup-checked').find('input').attr('checked', false);
-				console.log(checkVal)
+				$('.popup-checked').find('input').prop('checked', false);
+				//console.log(checkVal)
 				tab.parent().addClass('is-active').siblings().removeClass('is-active');
-				check.attr("checked",true).parents('.tab-item').show().siblings().fadeOut(0);
+				check.prop("checked",true).parents('.tab-item').addClass('visible').show().siblings().fadeOut(0).removeClass('visible');
 				select.text(checkVal + ' бел.руб.');
 		});
 
@@ -199,10 +204,10 @@ $(document).ready(function () {
 		select.each(function(){
 			var this_ = $(this);
 			
-			this_.find('input').on('change', function(){
+			this_.find('input').on('click', function(){
 				var price = $(this).data('price');
 
-				$(this).parents('.select__price').find('.price span').text(price + ' бел.руб.');
+				$(this).prop("checked",true).parents('.select__price').find('.price span').text(price + ' бел.руб.');
 			})
 		});
 
@@ -223,10 +228,34 @@ $(document).ready(function () {
 						usersurname: {
 							minlength: 2
 						},
+						username1: {
+							minlength: 2
+						},
+						usersurname1: {
+							minlength: 2
+						},
+						username2: {
+							minlength: 2
+						},
+						usersurname2: {
+							minlength: 2
+						},
 						password: {
 							minlength: 5
 						},
 						mobile: {
+							minlength: 5
+						},
+						password1: {
+							minlength: 5
+						},
+						mobile1: {
+							minlength: 5
+						},
+						password2: {
+							minlength: 5
+						},
+						mobile2: {
 							minlength: 5
 						},
 						confirm_password: {
@@ -236,10 +265,22 @@ $(document).ready(function () {
 						email: {
 							email: true
 						},
+						email1: {
+							email: true
+						},
+						email2: {
+							email: true
+						},
 						tel: {
 							minlength: 2,
 						},
 						address: {
+							minlength: 2
+						},
+						address1: {
+							minlength: 2
+						},
+						address2: {
 							minlength: 2
 						},
 						message: {
@@ -253,6 +294,18 @@ $(document).ready(function () {
 						},
 						apartment: {
 							minlength: 1
+						},
+						home1: {
+							minlength: 1
+						},
+						apartment1: {
+							minlength: 1
+						},
+						home2: {
+							minlength: 1
+						},
+						apartment2: {
+							minlength: 1
 						}
 					}
 				});
@@ -262,16 +315,27 @@ $(document).ready(function () {
 	validate();
 
 	$(".js-btn-submit").on("click", function(){
-			var form = $(this).parents(".js-validate");
-			var steps = $('.popup__wrap');
-			var step = $('.popup__wrap[data-step="'+$(this).attr("data-step")+'"]');
-			if (form.valid()) {
-				steps.removeClass("is-visible").hide();
-				step.addClass('is-visible').show();
-				return false;
-			}
-			else {
-				return false;
-			}
-		});
+		var form = $(this).parents(".js-validate");
+		var steps = $('.popup__wrap');
+		var step = $('.popup__wrap[data-step="'+$(this).attr("data-step")+'"]');
+		var check = $(this).parents('.form__cover').find('.tab-item.visible').find(':checked').data('days');
+		var price = $(this).parents('.form__cover').find('.tab-item.visible').find(':checked').data('price');
+		var tab = $(this).parents('.form__cover').find('.tab__list .is-active').find('a').data('person');
+		var contPrice = $('.form__cover').find('.select__price').find('.price span');
+
+		console.log(tab,check)
+
+		if (form.valid()) {
+			steps.removeClass("is-visible").hide();
+			step.addClass('is-visible').show();
+			step.find('.tab__list').find('a[data-person="'+tab+'"]').parent().addClass('is-active').siblings().removeClass('is-active').addClass('no-active');
+			step.find('.tab__menu-container').find('input[data-days="'+check+'"]').parents('.tab-item').show().addClass('visible').siblings().removeClass('visible');
+			step.find('.tab__menu-container').find('input[data-days="'+check+'"]').prop("checked",true).parents('.tab__menu-container').find('input:not(:checked)').prop("disabled", true);
+			contPrice.text(price + 'бел.руб.')
+			return false;
+		}
+		else {
+			return false;
+		}
+	});
 });

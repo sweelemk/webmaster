@@ -91,7 +91,7 @@ $link: #ff5a0f;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	align-content:center;
 	.logo {
 		background-image: url(../img/logo.png);
@@ -597,7 +597,7 @@ $link: #ff5a0f;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
 		align-content:center;
 		&:first-of-type {
 			margin-bottom: 3.8125em; // 61px / 16px
@@ -1013,6 +1013,9 @@ $link: #ff5a0f;
 					color: #000000;
 					border-color: transparent;
 				}
+			}
+			&.no-active {
+				pointer-events: none;
 			}
 		}
 	}

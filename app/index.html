@@ -37,7 +37,7 @@
 				<div class="eat__icon"></div>
 				<div class="preview__title">Теперь приготовление ужина станет для вас любимым занятием</div>
 				<div class="sub__title">Каждую неделю мы обновляем меню с&nbsp;качественными фото-рецептами</div>
-				<a data-href="" class="btn btn-popup">
+				<a data-href="order" class="btn btn-popup js-popup-link">
 					<span>Заказать</span>
 				</a>
 			</div>
@@ -676,7 +676,7 @@
 													</span>
 												</label>
 											</div>
-											<button class="btn-next btn js-btn-submit" type="submit" data-step='js-step-1'>
+											<button class="btn-next btn js-btn-submit" type="submit" data-step='js-step-1-stage-1'>
 												Далее
 												<i class="icon-arr"></i>
 											</button>
@@ -718,301 +718,11 @@
 							</div>
 						</div>						
 					</div>
-					<!--<div class="case-first-one" style="display: none;">
-						<div class="form__wrap">
-							<div class="title">Форма заказа</div>					
-							<div class="tab__container">							
-								<ul class="steps">
-									<li class="is-active">
-										<a href="">1</a>
-									</li>
-									<li class="is-active is-current">
-										<a href="">2</a>
-									</li>
-									<li>
-										<a href="">3</a>
-									</li>
-								</ul>
-								<div class="form">
-									<form action="" id="first">
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Время доставки<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Улица<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Дом<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Корпус<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Квартира<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline">
-												<span class="field__title">
-													<span>
-														примечания к заказу
-													</span>
-												</span>
-												<span class="field__body">
-													<textarea name="" id="" rows="2" class="input"></textarea>
-												</span>
-											</label>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<button class="btn-next btn">
-							Далее
-							<i class="icon-arr"></i>
-						</button>
-					</div>
-					<div class="case-first-two" style="display: none;">
-						<div class="form__wrap">
-							<div class="title">Форма заказа</div>					
-							<div class="tab__container">							
-								<ul class="steps">
-									<li class="is-active">
-										<a href="">1</a>
-									</li>
-									<li class="is-active">
-										<a href="">2</a>
-									</li>
-									<li class="is-active is-current">
-										<a href="">3</a>
-									</li>
-								</ul>
-								<div class="form">
-									<form action="" id="first">
-										<div class="row">
-											<label class="field field_inline radio">
-												<span class="field__title">
-													<span>
-														Способы оплаты<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<label for="money">
-														<input id="money" type="radio" name="pay" class="radio__btn" checked>
-														<span>Наличными курьеру</span>
-													</label>
-												</span>
-												<span class="field__body">
-													<label for="card">
-														<input id='card' type="radio" name="pay" class="radio__btn">
-														<span>Картой через интернет</span>
-													</label>
-												</span>
-											</label>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<button class="btn-next btn">
-							Оформить заказ
-							<i class="icon-arr"></i>
-						</button>
-					</div>
-					<div class="case-second-one" style="display: none;">
-						<div class="form__wrap">
-							<div class="title">Форма заказа</div>					
-							<div class="tab__container">
-								<div class="form">
-									<form action="" id="second" class="js-validate">
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Имя<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Фамилия
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Телефон<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														E-mail<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="email" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Время доставки<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Улица<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Дом<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Корпус<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Квартира<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline">
-												<span class="field__title">
-													<span>
-														примечания к заказу
-													</span>
-												</span>
-												<span class="field__body">
-													<textarea name="" id="" rows="2" class="input"></textarea>
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline radio">
-												<span class="field__title">
-													<span>
-														Способы оплаты<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<label for="money">
-														<input id="money" type="radio" name="pay" class="radio__btn" checked>
-														<span>Наличными курьеру</span>
-													</label>
-												</span>
-												<span class="field__body">
-													<label for="card">
-														<input id='card' type="radio" name="pay" class="radio__btn">
-														<span>Картой через интернет</span>
-													</label>
-												</span>
-											</label>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<button class="btn-next btn">
-							Оформить заказ
-							<i class="icon-arr"></i>
-						</button>
-					</div>-->
-				</div>
-				<div class="form__success" style="display: none;">
-					<div class="title">Спасибо!</div>
-					<p>Ваш заказ успешно оформлен! В течении дня с вами свяжется наш менеджер!</p>
-					<span class="sucess__close">Закрыть</span>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="popup__wrap" data-step="js-step-1">
+	<div class="popup__wrap" data-step="js-step-1-stage-1">
 		<div class="popup">
 			<div class="popup__body">
 				<span class="popup__close">
@@ -1036,22 +746,22 @@
 									</ul>
 									<div class="tab__menu-container">
 										<div class="tab-item tab-1">
-											<label for="3day-1-popup">
-												<input type="radio" id='3day-1-popup' data-price="400 000" name='person-popup' data-days="3day-1">
+											<label for="3day-1-popup1">
+												<input type="radio" id='3day-1-popup1' data-price="400 000" name='person-popup1' data-days="3day-1">
 												<span>3 ужина</span>
 											</label>
-											<label for="5day-1-popup">
-												<input type="radio" id='5day-1-popup' data-price="800 000" name='person-popup' data-days="5day-1">
+											<label for="5day-1-popup1">
+												<input type="radio" id='5day-1-popup1' data-price="800 000" name='person-popup1' data-days="5day-1">
 												<span>5 ужинов</span>
 											</label>
 										</div>
 										<div class="tab-item tab-2">
-											<label for="3day-2-popup">
-												<input type="radio" id='3day-2-popup' data-price="600 000" name='person-popup' data-days="3day-2">
+											<label for="3day-2-popup1">
+												<input type="radio" id='3day-2-popup1' data-price="600 000" name='person-popup1' data-days="3day-2">
 												<span>3 ужина</span>
 											</label>
-											<label for="5day-2-popup">
-												<input type="radio" id='5day-2-popup' data-price="1 000 000" name='person-popup' data-days="5day-2">
+											<label for="5day-2-popup1">
+												<input type="radio" id='5day-2-popup1' data-price="1 000 000" name='person-popup1' data-days="5day-2">
 												<span>5 ужинов</span>
 											</label>
 										</div>
@@ -1079,7 +789,7 @@
 									</li>
 								</ul>
 								<div class="form">
-									<form action="" id="first">
+									<form action="" id="first" class="js-validate">
 										<div class="row">
 											<label class="field field_inline c-50">
 												<span class="field__title">
@@ -1098,7 +808,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input">
+													<input type="text" class="input" required='' name="address1">
 												</span>
 											</label>
 										</div>
@@ -1110,13 +820,13 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input">
+													<input type="text" class="input" required='' name="home1">
 												</span>
 											</label>
 											<label class="field field_inline c-30">
 												<span class="field__title">
 													<span>
-														Корпус<sup>*</sup>
+														Корпус
 													</span>
 												</span>
 												<span class="field__body">
@@ -1130,7 +840,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input">
+													<input type="text" class="input" required='' name="apartment1">
 												</span>
 											</label>
 										</div>
@@ -1145,214 +855,118 @@
 													<textarea name="" id="" rows="2" class="input"></textarea>
 												</span>
 											</label>
-										</div>
+										</div>										
+										<button class="btn-next btn js-btn-submit" data-step='js-step-1-stage-2' type='submit'>
+											Далее
+											<i class="icon-arr"></i>
+										</button>
 									</form>
 								</div>
 							</div>
 						</div>
-						<button class="btn-next btn">
-							Далее
-							<i class="icon-arr"></i>
-						</button>
-					</div>
-					<div class="case-first-two" style="display: none;">
-						<div class="form__wrap">
-							<div class="title">Форма заказа</div>					
-							<div class="tab__container">							
-								<ul class="steps">
-									<li class="is-active">
-										<a href="">1</a>
-									</li>
-									<li class="is-active">
-										<a href="">2</a>
-									</li>
-									<li class="is-active is-current">
-										<a href="">3</a>
-									</li>
-								</ul>
-								<div class="form">
-									<form action="" id="first">
-										<div class="row">
-											<label class="field field_inline radio">
-												<span class="field__title">
-													<span>
-														Способы оплаты<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<label for="money">
-														<input id="money" type="radio" name="pay" class="radio__btn" checked>
-														<span>Наличными курьеру</span>
-													</label>
-												</span>
-												<span class="field__body">
-													<label for="card">
-														<input id='card' type="radio" name="pay" class="radio__btn">
-														<span>Картой через интернет</span>
-													</label>
-												</span>
-											</label>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<button class="btn-next btn">
-							Оформить заказ
-							<i class="icon-arr"></i>
-						</button>
-					</div>
-					<div class="case-second-one" style="display: none;">
-						<div class="form__wrap">
-							<div class="title">Форма заказа</div>					
-							<div class="tab__container">
-								<div class="form">
-									<form action="" id="second">
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Имя<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Фамилия
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Телефон<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														E-mail<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="email" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Время доставки<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-50">
-												<span class="field__title">
-													<span>
-														Улица<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Дом<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Корпус<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-											<label class="field field_inline c-30">
-												<span class="field__title">
-													<span>
-														Квартира<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<input type="text" class="input">
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline">
-												<span class="field__title">
-													<span>
-														примечания к заказу
-													</span>
-												</span>
-												<span class="field__body">
-													<textarea name="" id="" rows="2" class="input"></textarea>
-												</span>
-											</label>
-										</div>
-										<div class="row">
-											<label class="field field_inline radio">
-												<span class="field__title">
-													<span>
-														Способы оплаты<sup>*</sup>
-													</span>
-												</span>
-												<span class="field__body">
-													<label for="money">
-														<input id="money" type="radio" name="pay" class="radio__btn" checked>
-														<span>Наличными курьеру</span>
-													</label>
-												</span>
-												<span class="field__body">
-													<label for="card">
-														<input id='card' type="radio" name="pay" class="radio__btn">
-														<span>Картой через интернет</span>
-													</label>
-												</span>
-											</label>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<button class="btn-next btn">
-							Оформить заказ
-							<i class="icon-arr"></i>
-						</button>
 					</div>
 				</div>
-				<div class="form__success" style="display: none;">
-					<div class="title">Спасибо!</div>
-					<p>Ваш заказ успешно оформлен! В течении дня с вами свяжется наш менеджер!</p>
-					<span class="sucess__close">Закрыть</span>
+			</div>
+		</div>
+	</div>
+	<div class="popup__wrap" data-step="js-step-1-stage-2">
+		<div class="popup">
+			<div class="popup__body">
+				<span class="popup__close">
+					<svg viewBox='0 0 413 413' xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<circle id="svg_1" stroke-miterlimit="10" stroke="#000000" r="204.699997" cy="206.4" cx="206.9"/>
+							<circle id="svg_2" stroke-miterlimit="10" stroke="#000000" r="181.800003" fill="#FFFFFF" cy="203.4" cx="206.9"/>
+							<line id="svg_3" y2="291.3" y1="115.5" x2="294.8" x1="119" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+							<line id="svg_4" y2="291.3" y1="115.5" x2="119" x1="294.8" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+						</g>
+					</svg>
+				</span>
+				<div class="form__cover">
+					<form action="" class='js-validate'>
+						<div class="select__price">
+							<div class="col_50">
+								<div class="check__person">
+									<div class="tab__menu popup-checked">
+										<ul class="tab__list">
+											<li><a data-href="tab-1" data-person='2-popup'>2 персоны</a></li>
+											<li><a data-href="tab-2" data-person='4-popup'>4 персоны</a></li>
+										</ul>
+										<div class="tab__menu-container">
+											<div class="tab-item tab-1">
+												<label for="3day-1-popup1-1">
+													<input type="radio" id='3day-1-popup1-1' data-price="400 000" name='person-popup1' data-days="3day-1">
+													<span>3 ужина</span>
+												</label>
+												<label for="5day-1-popup1-1">
+													<input type="radio" id='5day-1-popup1-1' data-price="800 000" name='person-popup1' data-days="5day-1">
+													<span>5 ужинов</span>
+												</label>
+											</div>
+											<div class="tab-item tab-2">
+												<label for="3day-2-popup1-1">
+													<input type="radio" id='3day-2-popup1-1' data-price="600 000" name='person-popup1' data-days="3day-2">
+													<span>3 ужина</span>
+												</label>
+												<label for="5day-2-popup1-1">
+													<input type="radio" id='5day-2-popup1-1' data-price="1 000 000" name='person-popup1' data-days="5day-2">
+													<span>5 ужинов</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col_50 price">
+								<span>400 000 бел.руб.</span>
+							</div>
+						</div>
+						<div class="case-first-two">
+							<div class="form__wrap">
+								<div class="title">Форма заказа</div>					
+								<div class="tab__container">							
+									<ul class="steps">
+										<li class="is-active">
+											<a href="">1</a>
+										</li>
+										<li class="is-active">
+											<a href="">2</a>
+										</li>
+										<li class="is-active is-current">
+											<a href="">3</a>
+										</li>
+									</ul>
+									<div class="form">
+										<div class="row">
+											<label class="field field_inline radio">
+												<span class="field__title">
+													<span>
+														Способы оплаты<sup>*</sup>
+													</span>
+												</span>
+												<span class="field__body">
+													<label for="money">
+														<input id="money" type="radio" name="pay" class="radio__btn" checked>
+														<span>Наличными курьеру</span>
+													</label>
+												</span>
+												<span class="field__body">
+													<label for="card">
+														<input id='card' type="radio" name="pay" class="radio__btn">
+														<span>Картой через интернет</span>
+													</label>
+												</span>
+											</label>
+										</div>
+										<button class="btn-next btn js-btn-submit" type="submit" data-step='form-success'>
+											Оформить заказ
+											<i class="icon-arr"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -1382,22 +996,22 @@
 										</ul>
 										<div class="tab__menu-container">
 											<div class="tab-item tab-1">
-												<label for="3day-1-popup">
-													<input type="radio" id='3day-1-popup' data-price="400 000" name='person-popup' data-days="3day-1">
+												<label for="3day-1-popup2">
+													<input type="radio" id='3day-1-popup2' data-price="400 000" name='person-popup' data-days="3day-1">
 													<span>3 ужина</span>
 												</label>
-												<label for="5day-1-popup">
-													<input type="radio" id='5day-1-popup' data-price="800 000" name='person-popup' data-days="5day-1">
+												<label for="5day-1-popup2">
+													<input type="radio" id='5day-1-popup2' data-price="800 000" name='person-popup' data-days="5day-1">
 													<span>5 ужинов</span>
 												</label>
 											</div>
 											<div class="tab-item tab-2">
-												<label for="3day-2-popup">
-													<input type="radio" id='3day-2-popup' data-price="600 000" name='person-popup' data-days="3day-2">
+												<label for="3day-2-popup2">
+													<input type="radio" id='3day-2-popup2' data-price="600 000" name='person-popup' data-days="3day-2">
 													<span>3 ужина</span>
 												</label>
-												<label for="5day-2-popup">
-													<input type="radio" id='5day-2-popup' data-price="1 000 000" name='person-popup' data-days="5day-2">
+												<label for="5day-2-popup2">
+													<input type="radio" id='5day-2-popup2' data-price="1 000 000" name='person-popup' data-days="5day-2">
 													<span>5 ужинов</span>
 												</label>
 											</div>
@@ -1422,7 +1036,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input" required='' name="username">
+													<input type="text" class="input" required='' name="username2">
 												</span>
 											</label>
 											<label class="field field_inline c-50">
@@ -1432,7 +1046,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input" required='' name="usersurname">
+													<input type="text" class="input" required='' name="usersurname2">
 												</span>
 											</label>
 										</div>
@@ -1444,7 +1058,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input" required='' name="mobile">
+													<input type="text" class="input" required='' name="mobile2">
 												</span>
 											</label>
 											<label class="field field_inline c-50">
@@ -1454,7 +1068,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="email" class="input" required='' name="email">
+													<input type="email" class="input" required='' name="email2">
 												</span>
 											</label>
 										</div>
@@ -1476,7 +1090,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input" required='' name="address">
+													<input type="text" class="input" required='' name="address2">
 												</span>
 											</label>
 										</div>
@@ -1488,7 +1102,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input" required='' name="home">
+													<input type="text" class="input" required='' name="home2">
 												</span>
 											</label>
 											<label class="field field_inline c-30">
@@ -1508,7 +1122,7 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input" required='' name="apartment">
+													<input type="text" class="input" required='' name="apartment2">
 												</span>
 											</label>
 										</div>
@@ -1548,7 +1162,7 @@
 									</div>
 								</div>
 							</div>
-							<button class="btn-next btn" type='submit' data-step='form-success'>
+							<button class="btn-next btn js-btn-submit" type='submit' data-step='form-success'>
 								Оформить заказ
 								<i class="icon-arr"></i>
 							</button>
