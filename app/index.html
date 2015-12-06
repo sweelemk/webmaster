@@ -7,7 +7,8 @@
 	<title>Index</title>
 	<link rel="stylesheet" href="prod/css/lib.css">
 	<link rel="stylesheet" href="prod/css/fancy.css">
-	<link rel="stylesheet" href="prod/css/multiple-select.css">
+	<link rel="stylesheet" href="prod/css/slick.css">
+	<!-- <link rel="stylesheet" href="prod/css/multiple-select.css"> -->
 	<link rel="stylesheet" href="prod/css/fonts.min.css">
 	<link rel="stylesheet" href="prod/css/screen.min.css">
 
@@ -18,15 +19,28 @@
 			<a href="" class="logo"></a>
 			<nav class="nav">
 				<ul>
-					<li><a href="">как это работает</a></li>
-					<li><a href="">меню недели</a></li>
-					<li><a href="">о нас</a></li>
-					<li><a href="">блог</a></li>
-					<li><a href="">контакты</a></li>
+					<li><a data-scroll="#how">как это работает</a></li>
+					<li><a data-scroll="#carte">меню недели</a></li>
+					<li><a data-scroll="#why">о нас</a></li>
+					<li><a data-scroll="#insta">блог</a></li>
+					<li><a data-scroll="#footer">контакты</a></li>
 				</ul>
 			</nav>
 			<div class="phone__cover">
-				<a href="" class="phone"><span>+375 29 361 55 87</span></a>
+				<a href="" class="phone">
+					<i class="icon__phone">
+						<svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+								<g id="Icons-Communication" transform="translate(-85.000000, -126.000000)">
+									<g id="phone" transform="translate(85.000000, 126.000000)">
+										<path d="M3.6,7.8 C5,10.6 7.4,12.9 10.2,14.4 L12.4,12.2 C12.7,11.9 13.1,11.8 13.4,12 C14.5,12.4 15.7,12.6 17,12.6 C17.6,12.6 18,13 18,13.6 L18,17 C18,17.6 17.6,18 17,18 C7.6,18 0,10.4 0,1 C0,0.4 0.4,0 1,0 L4.5,0 C5.1,0 5.5,0.4 5.5,1 C5.5,2.2 5.7,3.4 6.1,4.6 C6.2,4.9 6.1,5.3 5.9,5.6 L3.6,7.8 L3.6,7.8 Z" id="Shape"/>
+									</g>
+								</g>
+							</g>
+						</svg>
+					</i>
+					<span>+375 29 361 55 87</span>
+				</a>
 			</div>
 		</header>
 		<div class="preview">
@@ -35,6 +49,7 @@
 			</div>
 			<div class="preview__cover">
 				<div class="eat__icon"></div>
+				<div class="brand__text">Сыты тыдзень</div>
 				<div class="preview__title">Теперь приготовление ужина станет для вас любимым занятием</div>
 				<div class="sub__title">Каждую неделю мы обновляем меню с&nbsp;качественными фото-рецептами</div>
 				<a data-href="order" class="btn btn-popup js-popup-link">
@@ -42,7 +57,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="how__section">
+		<div id="how" class="how__section">
 			<div class="title">Как это работает</div>
 			<div class="work__list">
 				<div class="work__item">
@@ -62,7 +77,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="carte__section">
+		<div id="carte" class="carte__section">
 			<div class="title">Меню недели</div>
 			<div class="time">
 				<i class="icon__calendar">
@@ -471,7 +486,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="why__section">
+		<div id="why" class="why__section">
 			<div class="title">Почему заказывать у нас выгодно</div>
 			<div class="descr"><i>Готовьте с удовольствием и наслаждайтесь вашим ужином, а подготовку доверьте нам!</i></div>
 			<div class="why__list">
@@ -502,15 +517,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="insta__section">
+		<div id="insta" class="insta__section">
 			<div class="insta__logo"></div>
 			<div class="hash">#siti-tidzen-with love</div>
-			<div class="insta__container"></div>
+			<div class="insta__container">
+				<div id="instafeed">
+						
+				</div>
+			</div>
 			<div class="btn__sync"></div>
 		</div>
 		<div class="push"></div>
 	</div>
-	<footer class="footer">
+	<footer id='footer' class="footer">
 		<div class="footer__row">
 			<div class="form">
 				<form action="" id='distribution'>
@@ -525,11 +544,11 @@
 		<div class="footer__row">
 			<nav class="footer__nav">
 				<ul>
-					<li><a href="">Как это работает</a></li>
-					<li><a href="">Блог</a></li>
-					<li><a href="">Меню недели</a></li>
-					<li><a href="">Контакты</a></li>
-					<li><a href="">О нас</a></li>
+					<li><a data-scroll="#how">Как это работает</a></li>
+					<li><a data-scroll="#insta">Блог</a></li>
+					<li><a data-scroll="#carte">Меню недели</a></li>
+					<li><a data-scroll="#footer">Контакты</a></li>
+					<li><a data-scroll="#why">О нас</a></li>
 				</ul>
 			</nav>			
 			<div class="footer__logo">
@@ -560,16 +579,13 @@
 			</div>
 		</div>
 	</footer>
-	<div class="popup__wrap order">
+	<div class="popup__wrap order" data-step="js-step-main">
 		<div class="popup">
 			<div class="popup__body">
 				<span class="popup__close">
-					<svg viewBox='0 0 413 413' xmlns="http://www.w3.org/2000/svg">
+					<svg viewBox="0 0 100.4 101" xmlns="http://www.w3.org/2000/svg">
 						<g>
-							<circle id="svg_1" stroke-miterlimit="10" stroke="#000000" r="204.699997" cy="206.4" cx="206.9"/>
-							<circle id="svg_2" stroke-miterlimit="10" stroke="#000000" r="181.800003" fill="#FFFFFF" cy="203.4" cx="206.9"/>
-							<line id="svg_3" y2="291.3" y1="115.5" x2="294.8" x1="119" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
-							<line id="svg_4" y2="291.3" y1="115.5" x2="119" x1="294.8" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+							<path id="svg_3" d="m70.949997,29.77034c-0.781006,-0.781998 -2.047005,-0.781998 -2.828003,0l-17.954998,17.957001l-17.954998,-17.957001c-0.780998,-0.781998 -2.047001,-0.781998 -2.827999,0c-0.781002,0.781002 -0.781002,2.047001 0,2.828003l17.954998,17.956997l-17.954998,17.957005c-0.781002,0.779999 -0.781002,2.047005 0,2.828003c0.390999,0.389999 0.902,0.584999 1.413998,0.584999s1.023003,-0.195 1.414001,-0.584999l17.954998,-17.956005l17.954998,17.956005c0.390999,0.389999 0.902,0.584999 1.414001,0.584999s1.023003,-0.195 1.414001,-0.584999c0.780998,-0.780998 0.780998,-2.048004 0,-2.828003l-17.954998,-17.957005l17.954998,-17.956997c0.781998,-0.780003 0.781998,-2.047001 0,-2.828003zm-20.783001,-29.344997c-27.641998,0 -50.128998,22.487 -50.128998,50.126999c0.002,27.643002 22.491003,50.131001 50.133003,50.131001c27.638996,0 50.124996,-22.488998 50.124996,-50.131001c0,-27.639999 -22.487,-50.126999 -50.129002,-50.126999zm0.004005,96.259007l-0.002007,0c-25.434996,0 -46.128995,-20.695007 -46.130997,-46.131008c0,-25.434998 20.693001,-46.126998 46.128998,-46.126998s46.129009,20.693002 46.129009,46.126998c-0.000008,25.435001 -20.69101,46.131008 -46.125004,46.131008z"/>
 						</g>
 					</svg>
 				</span>
@@ -621,13 +637,13 @@
 								<div class="tab__item js-tab-cont tab-first">
 									<ul class="steps">
 										<li class="is-active is-current">
-											<a href="">1</a>
+											<a class="js-prev-step" href="#" data-step='js-step-main'>1</a>
 										</li>
 										<li>
-											<a href="">2</a>
+											<a class="js-prev-step" href="#" data-step='js-step-1-stage-1'>2</a>
 										</li>
 										<li>
-											<a href="">3</a>
+											<a class="js-prev-step" href="#" data-step='js-step-1-stage-2'>3</a>
 										</li>
 									</ul>
 									<div class="form">
@@ -662,7 +678,7 @@
 														</span>
 													</span>
 													<span class="field__body">
-														<input type="text" class="input" required='' name="mobile">
+														<input type="tel" class="input" required='' name="mobile">
 													</span>
 												</label>
 												<label class="field field_inline c-50">
@@ -726,12 +742,9 @@
 		<div class="popup">
 			<div class="popup__body">
 				<span class="popup__close">
-					<svg viewBox='0 0 413 413' xmlns="http://www.w3.org/2000/svg">
+					<svg viewBox="0 0 100.4 101" xmlns="http://www.w3.org/2000/svg">
 						<g>
-							<circle id="svg_1" stroke-miterlimit="10" stroke="#000000" r="204.699997" cy="206.4" cx="206.9"/>
-							<circle id="svg_2" stroke-miterlimit="10" stroke="#000000" r="181.800003" fill="#FFFFFF" cy="203.4" cx="206.9"/>
-							<line id="svg_3" y2="291.3" y1="115.5" x2="294.8" x1="119" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
-							<line id="svg_4" y2="291.3" y1="115.5" x2="119" x1="294.8" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+							<path id="svg_3" d="m70.949997,29.77034c-0.781006,-0.781998 -2.047005,-0.781998 -2.828003,0l-17.954998,17.957001l-17.954998,-17.957001c-0.780998,-0.781998 -2.047001,-0.781998 -2.827999,0c-0.781002,0.781002 -0.781002,2.047001 0,2.828003l17.954998,17.956997l-17.954998,17.957005c-0.781002,0.779999 -0.781002,2.047005 0,2.828003c0.390999,0.389999 0.902,0.584999 1.413998,0.584999s1.023003,-0.195 1.414001,-0.584999l17.954998,-17.956005l17.954998,17.956005c0.390999,0.389999 0.902,0.584999 1.414001,0.584999s1.023003,-0.195 1.414001,-0.584999c0.780998,-0.780998 0.780998,-2.048004 0,-2.828003l-17.954998,-17.957005l17.954998,-17.956997c0.781998,-0.780003 0.781998,-2.047001 0,-2.828003zm-20.783001,-29.344997c-27.641998,0 -50.128998,22.487 -50.128998,50.126999c0.002,27.643002 22.491003,50.131001 50.133003,50.131001c27.638996,0 50.124996,-22.488998 50.124996,-50.131001c0,-27.639999 -22.487,-50.126999 -50.129002,-50.126999zm0.004005,96.259007l-0.002007,0c-25.434996,0 -46.128995,-20.695007 -46.130997,-46.131008c0,-25.434998 20.693001,-46.126998 46.128998,-46.126998s46.129009,20.693002 46.129009,46.126998c-0.000008,25.435001 -20.69101,46.131008 -46.125004,46.131008z"/>
 						</g>
 					</svg>
 				</span>
@@ -779,13 +792,13 @@
 							<div class="tab__container">							
 								<ul class="steps">
 									<li class="is-active">
-										<a href="">1</a>
+										<a class="js-prev-step" href="#" data-step='js-step-main'>1</a>
 									</li>
 									<li class="is-active is-current">
-										<a href="">2</a>
+										<a class="js-prev-step" href="#" data-step='js-step-1-stage-1'>2</a>
 									</li>
 									<li>
-										<a href="">3</a>
+										<a class="js-prev-step" href="#" data-step='js-step-1-stage-2'>3</a>
 									</li>
 								</ul>
 								<div class="form">
@@ -798,7 +811,11 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input">
+													<select name="" id="" class="input select">
+														<option value="9:00 - 13:00">9:00 - 13:00</option>
+														<option value="13:00 - 16:00">13:00 - 16:00</option>
+														<option value="16:00 - 21:00">16:00 - 21:00</option>
+													</select>
 												</span>
 											</label>
 											<label class="field field_inline c-50">
@@ -873,12 +890,9 @@
 		<div class="popup">
 			<div class="popup__body">
 				<span class="popup__close">
-					<svg viewBox='0 0 413 413' xmlns="http://www.w3.org/2000/svg">
+					<svg viewBox="0 0 100.4 101" xmlns="http://www.w3.org/2000/svg">
 						<g>
-							<circle id="svg_1" stroke-miterlimit="10" stroke="#000000" r="204.699997" cy="206.4" cx="206.9"/>
-							<circle id="svg_2" stroke-miterlimit="10" stroke="#000000" r="181.800003" fill="#FFFFFF" cy="203.4" cx="206.9"/>
-							<line id="svg_3" y2="291.3" y1="115.5" x2="294.8" x1="119" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
-							<line id="svg_4" y2="291.3" y1="115.5" x2="119" x1="294.8" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+							<path id="svg_3" d="m70.949997,29.77034c-0.781006,-0.781998 -2.047005,-0.781998 -2.828003,0l-17.954998,17.957001l-17.954998,-17.957001c-0.780998,-0.781998 -2.047001,-0.781998 -2.827999,0c-0.781002,0.781002 -0.781002,2.047001 0,2.828003l17.954998,17.956997l-17.954998,17.957005c-0.781002,0.779999 -0.781002,2.047005 0,2.828003c0.390999,0.389999 0.902,0.584999 1.413998,0.584999s1.023003,-0.195 1.414001,-0.584999l17.954998,-17.956005l17.954998,17.956005c0.390999,0.389999 0.902,0.584999 1.414001,0.584999s1.023003,-0.195 1.414001,-0.584999c0.780998,-0.780998 0.780998,-2.048004 0,-2.828003l-17.954998,-17.957005l17.954998,-17.956997c0.781998,-0.780003 0.781998,-2.047001 0,-2.828003zm-20.783001,-29.344997c-27.641998,0 -50.128998,22.487 -50.128998,50.126999c0.002,27.643002 22.491003,50.131001 50.133003,50.131001c27.638996,0 50.124996,-22.488998 50.124996,-50.131001c0,-27.639999 -22.487,-50.126999 -50.129002,-50.126999zm0.004005,96.259007l-0.002007,0c-25.434996,0 -46.128995,-20.695007 -46.130997,-46.131008c0,-25.434998 20.693001,-46.126998 46.128998,-46.126998s46.129009,20.693002 46.129009,46.126998c-0.000008,25.435001 -20.69101,46.131008 -46.125004,46.131008z"/>
 						</g>
 					</svg>
 				</span>
@@ -927,13 +941,13 @@
 								<div class="tab__container">							
 									<ul class="steps">
 										<li class="is-active">
-											<a href="">1</a>
+											<a class="js-prev-step" href="#" data-step='js-step-main'>1</a>
 										</li>
 										<li class="is-active">
-											<a href="">2</a>
+											<a class="js-prev-step" href="#" data-step='js-step-1-stage-1'>2</a>
 										</li>
 										<li class="is-active is-current">
-											<a href="">3</a>
+											<a class="js-prev-step" href="#" data-step='js-step-1-stage-2'>3</a>
 										</li>
 									</ul>
 									<div class="form">
@@ -975,12 +989,9 @@
 		<div class="popup">
 			<div class="popup__body">
 				<span class="popup__close">
-					<svg viewBox='0 0 413 413' xmlns="http://www.w3.org/2000/svg">
+					<svg viewBox="0 0 100.4 101" xmlns="http://www.w3.org/2000/svg">
 						<g>
-							<circle id="svg_1" stroke-miterlimit="10" stroke="#000000" r="204.699997" cy="206.4" cx="206.9"/>
-							<circle id="svg_2" stroke-miterlimit="10" stroke="#000000" r="181.800003" fill="#FFFFFF" cy="203.4" cx="206.9"/>
-							<line id="svg_3" y2="291.3" y1="115.5" x2="294.8" x1="119" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
-							<line id="svg_4" y2="291.3" y1="115.5" x2="119" x1="294.8" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+							<path id="svg_3" d="m70.949997,29.77034c-0.781006,-0.781998 -2.047005,-0.781998 -2.828003,0l-17.954998,17.957001l-17.954998,-17.957001c-0.780998,-0.781998 -2.047001,-0.781998 -2.827999,0c-0.781002,0.781002 -0.781002,2.047001 0,2.828003l17.954998,17.956997l-17.954998,17.957005c-0.781002,0.779999 -0.781002,2.047005 0,2.828003c0.390999,0.389999 0.902,0.584999 1.413998,0.584999s1.023003,-0.195 1.414001,-0.584999l17.954998,-17.956005l17.954998,17.956005c0.390999,0.389999 0.902,0.584999 1.414001,0.584999s1.023003,-0.195 1.414001,-0.584999c0.780998,-0.780998 0.780998,-2.048004 0,-2.828003l-17.954998,-17.957005l17.954998,-17.956997c0.781998,-0.780003 0.781998,-2.047001 0,-2.828003zm-20.783001,-29.344997c-27.641998,0 -50.128998,22.487 -50.128998,50.126999c0.002,27.643002 22.491003,50.131001 50.133003,50.131001c27.638996,0 50.124996,-22.488998 50.124996,-50.131001c0,-27.639999 -22.487,-50.126999 -50.129002,-50.126999zm0.004005,96.259007l-0.002007,0c-25.434996,0 -46.128995,-20.695007 -46.130997,-46.131008c0,-25.434998 20.693001,-46.126998 46.128998,-46.126998s46.129009,20.693002 46.129009,46.126998c-0.000008,25.435001 -20.69101,46.131008 -46.125004,46.131008z"/>
 						</g>
 					</svg>
 				</span>
@@ -1080,7 +1091,11 @@
 													</span>
 												</span>
 												<span class="field__body">
-													<input type="text" class="input">
+													<select name="" id="" class="input select">
+														<option value="9:00 - 13:00">9:00 - 13:00</option>
+														<option value="13:00 - 16:00">13:00 - 16:00</option>
+														<option value="16:00 - 21:00">16:00 - 21:00</option>
+													</select>
 												</span>
 											</label>
 											<label class="field field_inline c-50">
@@ -1181,12 +1196,9 @@
 		<div class="popup">
 			<div class="popup__body">
 				<span class="popup__close">
-					<svg viewBox='0 0 413 413' xmlns="http://www.w3.org/2000/svg">
+					<svg viewBox="0 0 100.4 101" xmlns="http://www.w3.org/2000/svg">
 						<g>
-							<circle id="svg_1" stroke-miterlimit="10" stroke="#000000" r="204.699997" cy="206.4" cx="206.9"/>
-							<circle id="svg_2" stroke-miterlimit="10" stroke="#000000" r="181.800003" fill="#FFFFFF" cy="203.4" cx="206.9"/>
-							<line id="svg_3" y2="291.3" y1="115.5" x2="294.8" x1="119" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
-							<line id="svg_4" y2="291.3" y1="115.5" x2="119" x1="294.8" stroke-width="22" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round" stroke="#000000" fill="none"/>
+							<path id="svg_3" d="m70.949997,29.77034c-0.781006,-0.781998 -2.047005,-0.781998 -2.828003,0l-17.954998,17.957001l-17.954998,-17.957001c-0.780998,-0.781998 -2.047001,-0.781998 -2.827999,0c-0.781002,0.781002 -0.781002,2.047001 0,2.828003l17.954998,17.956997l-17.954998,17.957005c-0.781002,0.779999 -0.781002,2.047005 0,2.828003c0.390999,0.389999 0.902,0.584999 1.413998,0.584999s1.023003,-0.195 1.414001,-0.584999l17.954998,-17.956005l17.954998,17.956005c0.390999,0.389999 0.902,0.584999 1.414001,0.584999s1.023003,-0.195 1.414001,-0.584999c0.780998,-0.780998 0.780998,-2.048004 0,-2.828003l-17.954998,-17.957005l17.954998,-17.956997c0.781998,-0.780003 0.781998,-2.047001 0,-2.828003zm-20.783001,-29.344997c-27.641998,0 -50.128998,22.487 -50.128998,50.126999c0.002,27.643002 22.491003,50.131001 50.133003,50.131001c27.638996,0 50.124996,-22.488998 50.124996,-50.131001c0,-27.639999 -22.487,-50.126999 -50.129002,-50.126999zm0.004005,96.259007l-0.002007,0c-25.434996,0 -46.128995,-20.695007 -46.130997,-46.131008c0,-25.434998 20.693001,-46.126998 46.128998,-46.126998s46.129009,20.693002 46.129009,46.126998c-0.000008,25.435001 -20.69101,46.131008 -46.125004,46.131008z"/>
 						</g>
 					</svg>
 				</span>
@@ -1203,6 +1215,9 @@
 <script src="prod/js/lib/jquery.validate.min.js"></script>
 <script src="prod/js/lib/jquery.fancybox.min.js"></script>
 <script src="prod/js/lib/multiple-select.js"></script>
+<script src="prod/js/lib/jquery.scrollTo.min.js"></script>
+<script src="prod/js/lib/instafeed.min.js"></script>
+<script src="prod/js/lib/slick.min.js"></script>
 <script src="prod/js/common.js"></script>
 </body>
 </html>

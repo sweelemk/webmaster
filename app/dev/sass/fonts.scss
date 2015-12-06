@@ -115,6 +115,7 @@ body {
 }
 i {
 	font-family: $PTserifItalic;
+	font-style: normal;
 }
 .header {
 	.phone__cover {
@@ -382,5 +383,98 @@ i {
 				}
 			}
 		}
+	}
+}
+.popup {
+	.tab__menu {
+		.tab__list {
+			li {
+				a {
+					font-family: $PTserifItalic;
+					font-size: 0.875em; // 14px / 16px
+				}
+			}
+		}
+		.tab__menu-container {
+			.tab-item {
+				label {
+					span {
+						font-family: $PTserifItalic;
+						font-size: 0.875em; // 14px / 16px
+					}
+				}
+			}
+		}
+	}
+}
+.ms-drop {
+	ul {
+
+		li {
+			label {
+				font-family: $FuturaNewBook;
+			}
+			&.selected {
+				label {
+					font-family: $FuturaNewBold;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1279px) {
+	body {
+		font-size: 81.5%;
+	}
+	.header {
+		.nav {
+			li {
+				a {
+					font-size: 0.75em;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1023px) {
+	.preview {
+		.preview__cover {
+			.preview__title {
+				font-family: $FuturaNewHeavy;
+				font-size: 2.15em; // 30px / 13.4px
+			}
+			.brand__text {
+				font-family: $FuturaNewBook;
+				font-size: 28px; // 28px / 13.4px
+			}
+			.sub__title {
+				font-family: $PTserifregular;
+				font-size: 1.1em; // 16px / 13.4px
+			}
+		}
+	}
+	.btn {
+		span {
+			font-size: 0.9em;
+		}
+	}
+	.footer {
+		.footer__row {
+			.form {
+				span {
+					font-size: 0.85em;
+				}
+			}
+		}
+	}
+	.form__wrap {
+		.nav__tab {
+			li {
+				font-size: 0.85em;
+			}
+		}
+	}
+	.fancybox-inner .items .title {
+		font-size: 1em;
 	}
 }
