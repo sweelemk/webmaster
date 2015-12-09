@@ -84,7 +84,18 @@ $link: #ff5a0f;
 	margin: 0 auto;
 	padding: 3.25em 8.75em; // 52px 140px / 16px
 }
+.header-outer {
+	position: fixed;
+	top: 0;left: 0;
+	width: 100%;
+	z-index: 5;
+}
 .header {
+	max-width: 1200px;
+	min-width: 320px;
+	background-color: #fff;
+	width: 100%;
+	margin: 0 auto;
 	padding: 1.625em 2.8125em 1.6875em; //26px 45px 27px / 16px
 	//@include clearfix;
 	display: flex;
@@ -143,6 +154,21 @@ $link: #ff5a0f;
 	height: 44.8125em; //717px / 16px
 	width: 100%;
 	position: relative;
+	.open {
+		display: none;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		z-index: 3;
+		i {
+			width: 40px;
+			height: 28px;
+			display: inline-block;
+			svg {
+				stroke: #ffffff;
+			}
+		}
+	}
 	.img__cover {
 		position: absolute;
 		width: 100%;
@@ -635,7 +661,10 @@ $link: #ff5a0f;
 		margin-bottom: 2.125em; // 34px / 16px
 		padding: 0 2em; //32px /16px
 		width: 100%;
-		#instafeed {
+		#instafeed-mobile {
+			display: none;
+		}
+		.insta {
 			@include clearfix;
 			min-height: 16.0625em; // 257px / 16px
 			.photo-box {
@@ -676,6 +705,24 @@ $link: #ff5a0f;
 		background-repeat: no-repeat;
 		background-size: cover;
 		cursor: pointer;
+	}
+	.arrow__slider {
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		display: none;
+		.arrows {
+			padding: 10px 0;
+			width: 50%;
+			float: left;
+			height: 50px; // 50px / 16px
+			cursor: pointer;
+			i {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+			}
+		}
 	}
 }
 .footer {
@@ -1330,11 +1377,67 @@ $link: #ff5a0f;
 		}
 	}
 }
+.mobile-navi {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	bottom: 0;
+	width: 320px;
+	background-color: #222;
+	z-index: 10;
+	overflow: auto;
+	transform: translate3d(-50%, 100%, 0);
+	transition: transform 0.3s linear;
+	padding: 20px 0;
+	&.is-visible {
+		transform: translate3d(-50%, 0, 0);
+	}
+	.navi-inner {
+		text-align: center;
+		.logo {
+			background-image: url(../img/eat.png);
+			width: 4.875em;// 205px / 16px
+			height: 4.875em;// 30px / 16px
+			display: inline-block;
+			background-size: cover;
+			margin-bottom: 40px;
+		}
+		.menu-list {
+			margin-bottom: 20px;
+			li {
+				a {
+					padding: 10px 0;
+					display: inline-block;
+					color: #fff;
+				}
+			}
+		}
+		.mobile-phone {
+			a {
+				color: $link;
+			}
+		}
+	}
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		i {
+			width: 30px;
+			height: 30px;
+			display: inline-block;
+			svg {
+				stroke: #ffffff;
+			}
+		}
+	}
+}
 @media screen and (max-width: 1279px) {
 	.out {
 		max-width: 980px;
 	}
 	.header {
+		max-width: 980px;
 		.logo {
 			height: 1.8128em; // 29px / 16px
 		}
@@ -1425,6 +1528,9 @@ $link: #ff5a0f;
 		}
 	}
 	.preview {
+		.open {
+			display: block;
+		}
 		height: 41.795em; // 545px / 16px
 		.preview__cover {
 			padding: 2.68402em 2.9em; // 35px  45px / 16px
@@ -1481,6 +1587,23 @@ $link: #ff5a0f;
 		&::before {
 			display: none;
 		}
+	}
+	.insta__section {
+		.insta__container {
+			padding: 0;
+			#instafeed-desktop {
+				display: none;
+			}
+			#instafeed-mobile {
+				display: block;
+			}
+		}
+		.arrow__slider {
+			display: inline-block;
+		}
+		.btn__sync {
+			display: none;
+		}		
 	}
 	.popup {
 		padding: 0;
@@ -1551,10 +1674,10 @@ $link: #ff5a0f;
 	.fancybox-inner .items .ingredient__list .ingredient__item {
 		width: 33%;
 	}
-	.insta__section .insta__container #instafeed {
+	.insta__section .insta__container .insta {
 		.photo-box {
 			width: 50%;
 		}
-		height: 832px;
+		//height: 832px;
 	}
 }

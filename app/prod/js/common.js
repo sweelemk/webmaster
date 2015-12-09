@@ -373,23 +373,105 @@ $(document).ready(function () {
 	})();
 
 	(function(){
-		var feed = new Instafeed({
-			clientId: '97ae5f4c024c4a91804f959f43f2635f',
-			target: 'instafeed',
-			get: 'tagged',
-			tagName: 'photographyportfolio',
-			links: true,
-			limit: 16,
-			sortBy: 'random',
-			resolution: 'thumbnail',
-			template: '<div class="photo-box"><div class="image-wrap"><a href="{{link}}"><img src="{{image}}"></a></div></div>'
-		});
-		feed.run();
 
-		$('.btn__sync').on('click', function () {
-			$('#instafeed').empty();
+		var insta = $('.insta');
+
+		insta.each(function(){
+			var this_ = $(this),
+				attr = this_.attr('id');
+
+			console.log(attr)
+
+			var feed = new Instafeed({
+				clientId: '97ae5f4c024c4a91804f959f43f2635f',
+				target: attr,
+				get: 'tagged',
+				tagName: 'photographyportfolio',
+				links: true,
+				limit: 16,
+				sortBy: 'random',
+				resolution: 'thumbnail',
+				after: function(){
+					if(attr === 'instafeed-mobile') {
+						slickInit();
+					}
+					
+				},
+				template: '<div class="photo-box"><div class="image-wrap"><a href="{{link}}"><img src="{{image}}"></a></div></div>'
+			});
 			feed.run();
-		})
 
+			$('.btn__sync').on('click', function () {
+				$('#instafeed-desktop').empty();
+				$('#instafeed-mobile').slick('unslick');
+				feed.run();
+			});
+
+		});		
+
+	})();
+
+	function slickInit() {
+		
+		var cont = $('.arrow__slider'),
+			slider = $('#instafeed-mobile'),
+			next = cont.find('.arrow__next'),
+			prev = cont.find('.arrow__prev');
+
+		slider.slick({
+			slidesToShow: 2,
+			slidesToShow: 2,
+			rows: 2,
+			arrows: false
+		});
+
+		next.on('click', function(){
+			slider.slick('slickNext');
+		});
+
+		prev.on('click', function(){
+			slider.slick('slickPrev');
+		});
+	}
+
+	//padding header 
+	var fixed = function(){
+		var header = $('.header').innerHeight(),
+			preview = $('.preview');
+		if (window.innerWidth && parseInt(window.innerWidth) <= 1023) {
+			preview.css('margin-top', 0);
+		} else {
+			preview.css('margin-top', header);
+		}
+	};
+	fixed();
+
+	window.addEventListener('resize', function(){
+		fixed();
+	});
+
+
+	//toggle  menu mobile
+	(function(){
+		var btnOpen = $('.js-btn-open'),
+			btnClose = $('.js-close'),
+			menuMobile = $('.mobile-navi'),
+			html = $('html'),
+			link = menuMobile.find('a[data-scroll]');
+
+		btnOpen.on('click', function(){
+			menuMobile.addClass('is-visible');
+			html.addClass('space');
+		});
+		btnClose.on('click', function(){
+			menuMobile.removeClass('is-visible');
+			html.removeClass('space');
+		});
+		link.on('click', function(){
+			setTimeout(function(){
+				menuMobile.removeClass('is-visible');
+				html.removeClass('space');
+			},700);
+		});
 	})();
 });

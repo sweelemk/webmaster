@@ -478,3 +478,19 @@ i {
 		font-size: 1em;
 	}
 }
+.mobile-navi {
+	.menu-list {
+		li {
+			a {
+				font-family: $FuturaNewHeavy;
+				font-size: 2.25em;
+			}
+		}
+	}
+	.mobile-phone {
+		a {
+			font-family: $FuturaNewHeavy;
+			font-size: 2.25em;
+		}
+	}
+}
