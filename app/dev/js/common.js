@@ -388,7 +388,7 @@ $(document).ready(function () {
 	(function(){
 		$('a[data-scroll]').click(function(){
 			var idscroll = $(this).data('scroll');
-			$.scrollTo(idscroll, 1000);
+			$.scrollTo(idscroll, 1000, {offset: function() { return {top:-75}; }});
 			return false;
 		});
 	})();
