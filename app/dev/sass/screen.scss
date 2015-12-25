@@ -58,6 +58,11 @@ html {
 	&.space {
 		body {
 			overflow: hidden;
+			padding-right: 17px;
+		}
+		.header-outer {
+			width: auto;
+			right: 17px;
 		}
 	}
 }
@@ -66,6 +71,7 @@ body {
 }
 
 $link: #ff5a0f;
+$link-hover: #f24c00;
 
 .out {
 	max-width: 1200px;
@@ -73,6 +79,22 @@ $link: #ff5a0f;
 	min-height: 100%;
 	height: auto;
 	background-color: #fff;
+	.open {
+		display: none;
+		position: fixed;
+		top: 20px;
+		right: 50%;
+		margin-right: -140px;
+		z-index: 3;
+		i {
+			width: 40px;
+			height: 28px;
+			display: inline-block;
+			svg {
+				stroke: #ffffff;
+			}
+		}
+	}
 }
 .push {
 	height: 18.0625em; // 289px / 16px
@@ -104,12 +126,23 @@ $link: #ff5a0f;
 	align-items: center;
 	justify-content: space-between;
 	align-content:center;
+	position: relative;
+	&::after {
+		content: '';
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-shadow: 0 0 0.9375em #000; // 15px /16px 
+		position: absolute;
+		height: 0.0625em; // 1px / 16px
+		z-index: -1;
+	}
 	.logo {
 		background-image: url(../img/logo.png);
 		width: 12.8125em;// 205px / 16px
 		height: 1.875em;// 30px / 16px
 		display: inline-block;
-		background-size: cover;
+		background-size: contain;
 	}
 	.nav {
 		text-align: center;
@@ -122,6 +155,10 @@ $link: #ff5a0f;
 				color: #2c2c2c;
 				padding: 0 1.090909090909091em; // 12px / 11px
 				letter-spacing: 0.2272727272727273em; // 2.5px / 11px
+				@include transition(color);
+				&:hover {
+					color: $link-hover;
+				}
 			}
 		}
 	}	
@@ -154,21 +191,6 @@ $link: #ff5a0f;
 	height: 44.8125em; //717px / 16px
 	width: 100%;
 	position: relative;
-	.open {
-		display: none;
-		position: absolute;
-		top: 20px;
-		right: 20px;
-		z-index: 3;
-		i {
-			width: 40px;
-			height: 28px;
-			display: inline-block;
-			svg {
-				stroke: #ffffff;
-			}
-		}
-	}
 	.img__cover {
 		position: absolute;
 		width: 100%;
@@ -209,11 +231,11 @@ $link: #ff5a0f;
 		.eat__icon {
 			display: inline-block;
 			text-align: center;
-			width: 4.875em; // 78px / 16px
-			height: 4.875em; // 78px / 16px
+			width: 4.876em; // 78px / 16px
+			height: 4.876em; // 78px / 16px
 			background-image: url(../img/eat.png);
 			background-repeat: no-repeat;
-			background-size: cover;
+			background-size: contain;
 			margin-bottom: 1.5em; // 24px / 16px
 		}
 		.brand__text {
@@ -248,6 +270,15 @@ $link: #ff5a0f;
 					background-image: url(../img/svg/arrow_right.svg);
 					width: 0.727272em; // 8px / 11px
 					height: 1.181818em; // 13px / 11px
+					transform: translate3d(0, 0, 0);
+					@include transition(transform);
+				}
+			}
+			&:hover {
+				span {
+					&::after {
+						transform: translate3d(0.5em, 0, 0);
+					}
 				}
 			}
 		}
@@ -262,6 +293,7 @@ $link: #ff5a0f;
 	text-align: center;
 	display: inline-block;
 	border-radius: 0.25em; // 4px / 16px
+	@include transition(background-color)
 	span {
 		color: #ffffff;
 		letter-spacing: 0.5px;
@@ -269,10 +301,10 @@ $link: #ff5a0f;
 
 	}
 	&:hover {
-		background-color: $link;
+		background-color: $link-hover;
 	}
 	&:active {
-		background-color: $link;
+		background-color: $link-hover;
 	}
 }
 .how__section {
@@ -299,21 +331,21 @@ $link: #ff5a0f;
 				height: 4.75em; // 76px / 16px
 				background-image: url(../img/hand.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 			}
 			.icon__delivery {
 				width: 3.75em; // 60px / 16px
 				height: 4.75em; // 76px / 16px
 				background-image: url(../img/hand.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 			}
 			.icon__cook {
 				width: 3.75em; // 60px / 16px
 				height: 4.75em; // 76px / 16px
 				background-image: url(../img/hand.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 			}
 			.title {
 				color: #88ccc4;
@@ -387,6 +419,27 @@ $link: #ff5a0f;
 						max-width: 190px;
 						height: 42px;
 						line-height: 42px;
+						span {
+							position: relative;
+							&::after {
+								content: "";
+								position: absolute;
+								right: -3em; // 33px / 11px
+								top: 0;
+								background-image: url(../img/svg/arrow_right.svg);
+								width: 0.727272em; // 8px / 11px
+								height: 1.181818em; // 13px / 11px
+								transform: translate3d(0, 0, 0);
+								@include transition(transform);
+							}
+						}
+						&:hover {
+							span {
+								&::after {
+									transform: translate3d(0.5em, 0, 0);
+								}
+							}
+						}
 					}
 				}
 				.days {
@@ -411,6 +464,7 @@ $link: #ff5a0f;
 				color: #202020;
 				letter-spacing: 0.0070833333333333em; // 0.17px / 24px
 				margin-bottom: 0.33333em; //8px / 24px
+				@include transition(color);
 			}
 			.time {
 				position: relative;
@@ -425,8 +479,13 @@ $link: #ff5a0f;
 					display: inline-block;
 					left: 0;
 					background-image: url(../img/svg/clock.svg);
-					background-size: cover;
+					background-size: contain;
 					background-repeat: no-repeat;
+				}
+			}
+			&:hover {
+				.title {
+					color: $link-hover;
 				}
 			}
 		}
@@ -503,7 +562,7 @@ $link: #ff5a0f;
 				display: inline-block;
 				left: 0;
 				background-image: url(../img/svg/clock.svg);
-				background-size: cover;
+				background-size: contain;
 				background-repeat: no-repeat;
 			}
 		}
@@ -592,7 +651,7 @@ $link: #ff5a0f;
 				height: 3em; // 48px / 16px
 				background-image: url(../img/freshness.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				margin-bottom: 1.1875em;// 19px / 16px
 			}
 			.icon__discont {
@@ -600,7 +659,7 @@ $link: #ff5a0f;
 				height: 3.75em; // 60px / 16px
 				background-image: url(../img/discount.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				margin-bottom: 0.375em; // 6px / 16px
 			}
 			.icon__ships {
@@ -608,7 +667,7 @@ $link: #ff5a0f;
 				height: 3.0625em; // 49px / 16px
 				background-image: url(../img/shipping.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				margin-bottom: 1.125em; // 18px / 16px
 			}
 			.icon__providers {
@@ -616,7 +675,7 @@ $link: #ff5a0f;
 				height: 3.875em; // 62px / 16px
 				background-image: url(../img/providers.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				margin-bottom: 0.875em; // 14px / 16px
 			}
 			.icon__recipes {
@@ -624,7 +683,7 @@ $link: #ff5a0f;
 				height: 3.8125em; // 61px / 16px
 				background-image: url(../img/recipes.png);
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				margin-bottom: 0.9375em; // 15px / 16px
 			}
 			.title {
@@ -647,13 +706,19 @@ $link: #ff5a0f;
 		height: 1.6875em; // 27px / 16px
 		background-image: url(../img/svg/instagram.svg);
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 		display: inline-block;
 		margin-bottom: 0.875em; //14px / 16px
 	}
-	.hash {
-		color: #838c8d;
+	.hash {		
 		margin-bottom: 1.9375em; // 31px / 16px
+		a {
+			color: #838c8d;
+			@include transition(color);
+			&:hover {
+				color: $link-hover;
+			}
+		}
 	}
 	.insta__container {
 		//height: 257px;
@@ -703,8 +768,21 @@ $link: #ff5a0f;
 		display: inline-block;
 		background-image: url(../img/svg/sync.svg);
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 		cursor: pointer;
+		.svg__sync {
+			path {
+				fill: #a2d4ce;
+				@include transition(fill);
+			}
+		}
+		&:hover {
+			.svg__sync {
+				path {
+					fill: $link-hover;
+				}
+			}
+		}
 	}
 	.arrow__slider {
 		text-align: center;
@@ -766,7 +844,7 @@ $link: #ff5a0f;
 					width: 1.1875em; // 19px / 16px
 					height: 0.875em; // 14px / 16px
 					background-image: url(../img/svg/mail.svg);
-					background-size: cover;
+					background-size: contain;
 					background-repeat: no-repeat;
 					position: absolute;
 					top: 0.625em; // 10px / 16px
@@ -789,15 +867,24 @@ $link: #ff5a0f;
 					text-transform: uppercase;
 					padding: 0 1.818181818181818em; // 20px / 11px
 					letter-spacing: 0.2090909090909091em; // 2.3px / 11px
+					@include transition(color);
+					&:hover {
+						color: $link-hover;
+					}
 				}
 			}
 		}
 		.social {
 			width: 17.8125em; // 285px / 16px
 			text-align: right;
+			user-select: none;
 			a[class*='icon__'] {
-				margin-left: 1.875em; // 30px / 16px
+				margin-right: 1.875em; // 30px / 16px
 				display: inline-block;
+				margin-left: -0.36em;
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 			.icon__fb {
 				width: 15px;
@@ -805,6 +892,7 @@ $link: #ff5a0f;
 				padding: 0 4px;
 				path {
 					fill: #ffffff;
+					@include transition(fill);
 				}
 			}
 			.icon__vk {
@@ -813,6 +901,7 @@ $link: #ff5a0f;
 				padding: 0 1px;
 				path {
 					fill: #ffffff;
+					@include transition(fill);
 				}
 			}
 			.icon__insta {
@@ -820,6 +909,12 @@ $link: #ff5a0f;
 				height: 16px;
 				path {
 					fill: #ffffff;
+					@include transition(fill);
+				}
+			}
+			a[class*='icon__']:hover {
+				path {
+					fill: $link-hover;
 				}
 			}
 		}
@@ -831,7 +926,7 @@ $link: #ff5a0f;
 				height: 3.75em; // 60px / 16px
 				display: inline-block;
 				background-image: url(../img/eat.png);
-				background-size: cover;
+				background-size: contain;
 				background-repeat: no-repeat;
 			}
 		}
@@ -842,10 +937,12 @@ $link: #ff5a0f;
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	right: 0;
+	bottom: 0;
+	// width: 100%;
+	// height: 100%;
 	background-color: rgba(31, 31, 31, 0.62);
-	overflow: auto;
+	overflow-y: auto;
 	text-align: center;
 	min-width: 320px;
 	z-index: 25;
@@ -889,7 +986,26 @@ $link: #ff5a0f;
 			max-width: 100%;
 			border-radius: 0;
 			text-transform: uppercase;
+			letter-spacing: 0.16875em; // 2.7px / 16px
 			color: #ffffff;
+			@include transition(background-color);
+			.icon-arr {
+				position: relative;
+				display: inline-block;
+				background-image: url(../img/svg/arrow_right.svg);
+				width: .717171em;
+				height: 1.181818em;
+				vertical-align: middle;
+				@include transition(transform);
+				top: -0.125em; // 2px / 16px
+				right: -1.25em; // 20px / 16px
+			}
+			&:hover {
+				background-color: $link-hover;
+				.icon-arr {
+					transform: translate3d(0.5em, 0, 0);
+				}
+			}
 		}
 		.form__success {
 			text-align: center;
@@ -986,7 +1102,7 @@ $link: #ff5a0f;
 	.steps {
 		position: relative;
 		+ .form {
-			margin-top: 1.625em; // 26px / 16px
+			margin-top: 2.625em; // 26px / 16px
 		}
 		li {
 			display: inline-block;
@@ -994,6 +1110,7 @@ $link: #ff5a0f;
 			padding-left: 3.625em; // 58px / 16px
 			position: relative;
 			vertical-align: top;
+			margin-left: -0.36em;
 			&:first-child {
 				width: 1.5em; // 24px / 13px
 				padding-left: 0;
@@ -1004,11 +1121,11 @@ $link: #ff5a0f;
 			&::before {
 				background: #ebebeb;
 				content: "";
-				height: 0.0769230769230769em; // 1px / 13px
-				left: -0.25em;// -4px /13px
+				height: 0.0625em; // 1px / 16px
+				left: 0.0625em;// 1px /16px
 				position: absolute;
-				top: 0.9230769230769231em; // 12px /13px
-				width: 4.769230769230769em; //62px / 13px
+				top: 0.75em; // 12px /16px
+				width: 3.625em; //58px / 16px
 			}
 			a {
 				width: 1.846153846153846em; // 24px / 13px
@@ -1147,7 +1264,7 @@ $link: #ff5a0f;
 							height: 0.9374em; // 15px / 16px
 							background-image: url(../img/svg/clock.svg);
 							background-repeat: no-repeat;
-							background-size: cover;
+							background-size: contain;
 							left: 0;
 							top: 0.8125em; // 13px / 16px
 						}
@@ -1269,6 +1386,7 @@ $link: #ff5a0f;
 				width: 100%;
 				text-align: center;
 				margin-bottom: 0.1875em; // 3px / 16px
+				cursor: pointer;
 				input {
 					position: absolute;
 					top: 0;
@@ -1300,6 +1418,10 @@ $link: #ff5a0f;
 					}
 
 				}
+			}
+			&.no-active {
+				-ms-pointer-events: none;
+				pointer-events: none;
 			}
 		}
 	}		
@@ -1399,8 +1521,9 @@ $link: #ff5a0f;
 			width: 4.875em;// 205px / 16px
 			height: 4.875em;// 30px / 16px
 			display: inline-block;
-			background-size: cover;
+			background-size: contain;
 			margin-bottom: 40px;
+			background-repeat: no-repeat;
 		}
 		.menu-list {
 			margin-bottom: 20px;
@@ -1409,12 +1532,46 @@ $link: #ff5a0f;
 					padding: 10px 0;
 					display: inline-block;
 					color: #fff;
+					@include transition(color);
+					&:hover {
+						color: $link-hover;
+					}
 				}
 			}
 		}
 		.mobile-phone {
+			margin-bottom: 20px;
 			a {
 				color: $link;
+			}
+		}
+		.btn {
+			max-width: 210px;
+			width: 100%;
+			height: 3.625em;
+			line-height: 3.5em;
+			position: relative;
+			span {
+				position: relative;
+				letter-spacing: 0.2272727272727273em; //2.5px / 11px
+				&::after {
+					content: "";
+					position: absolute;
+					right: -15px; // 33px / 11px
+					top: 1px;
+					background-image: url(../img/svg/arrow_right.svg);
+					width: 0.727272em; // 8px / 11px
+					height: 1.181818em; // 13px / 11px
+					transform: translate3d(0, 0, 0);
+					@include transition(transform);
+				}
+			}
+			&:hover {
+				span {
+					&::after {
+						transform: translate3d(5px, 0, 0);
+					}
+				}
 			}
 		}
 	}
@@ -1457,10 +1614,8 @@ $link: #ff5a0f;
 	.form__wrap {
 		.steps {
 			li {
-				&::before {
-					left: -0.28em;
-					top: 0.75em;
-					width: 3.9em;
+				a {
+					line-height: 1.8em;
 				}
 			}
 		}
@@ -1492,11 +1647,21 @@ $link: #ff5a0f;
 	}
 }
 @media screen and (max-width: 1023px) {
+	html {
+		&.space {
+			body {
+				padding-right: 0;
+			}
+		}
+	}
 	.header {
 		display: none;
 	}
 	.out {
 		max-width: 320px;
+		.open {
+			display: block;
+		}
 	}
 	.footer {
 		max-width: 320px;
@@ -1515,7 +1680,7 @@ $link: #ff5a0f;
 				.field__row {
 					margin-left: 0;
 					.btn__send {
-						display: none;
+						top: .725em;
 					}
 				}
 				span {
@@ -1528,9 +1693,6 @@ $link: #ff5a0f;
 		}
 	}
 	.preview {
-		.open {
-			display: block;
-		}
 		height: 41.795em; // 545px / 16px
 		.preview__cover {
 			padding: 2.68402em 2.9em; // 35px  45px / 16px
@@ -1612,6 +1774,7 @@ $link: #ff5a0f;
 			display: inline-block;
 			width: 100%;
 			height: auto;
+			border-radius: 0.8em;
 			.col_50 {
 				width: 100%;
 				&:first-of-type {
@@ -1650,6 +1813,10 @@ $link: #ff5a0f;
 					.field__body {
 						width: 100%;
 						margin-bottom: 1em;
+						#card + span {
+							margin-bottom: 2.8125em; // 45px / 16px
+							display: inline-block;
+						}
 					}
 				}
 			}

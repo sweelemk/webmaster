@@ -112,8 +112,8 @@ $(document).ready(function () {
 		
 		$('.js-popup-link').on('click', function(event){
 			if(!$(this).hasClass('.js-popup-data')){
-				tabs();
-
+				//tabs();
+				$('.popup').find('.tab__list').find('li').first().addClass('is-active');
 				$('.popup').find('.tab__menu-container').find('.tab-item').first().find('label:first-child input').prop('checked', true);
 			}
 			var popup = $(this).data('href');
@@ -133,7 +133,10 @@ $(document).ready(function () {
 			event.stopPropagation();
 		});
 
-		$(".popup__close, .sucess__close, .popup__wrap").on("click", function(){	
+		$(".popup__close, .sucess__close, .popup__wrap").on("click", function(){
+
+			resetTabs();
+
 			if(!popupSelector.hasClass('is-visible')) return;
 			
 			popupSelector
@@ -165,10 +168,10 @@ $(document).ready(function () {
 				$(this).parent().addClass("is-active");
 				tab_cont.fadeOut(0).removeClass('visible');
 				setTimeout(function(){
-        	   		parents.find("."+index).addClass('visible')
+        	   		parents.find("."+index).addClass('visible');        	   		
         		}, 10);
-				parents.find("."+index).show();
-
+				parents.find("."+index).show().find('label:first-child input').trigger('click');
+				//tab_cont.find('label:first-child input').trigger('click');
 				return false;
 			});
 			//if(!$(this).parent().hasClass('popup-checked')){
@@ -186,6 +189,25 @@ $(document).ready(function () {
 		});
 	};
 	tabs();
+
+	function resetTabs() {
+		$(".tab__list").each(function(){
+			var this_ = $(this),
+				tab_link = $(this).find("a"),
+				tab_item = $(this).find("li"),
+				index = tab_link.data("href"),
+				parents = $(this).parents(".tab__menu"),
+				tab_cont = parents.find(".tab-item");
+
+			tab_cont.removeClass('visible').hide();
+
+			setTimeout(function(){
+				$('.popup').find('.tab__list').find('li').first().addClass('is-active').siblings().removeClass('is-active');
+				$('.popup').find('.tab__menu-container').find('.tab-item').first().find('label:first-child input').trigger('click')//.prop('checked', true);
+			}, 200);
+			tabs();
+		});
+	};
 
 	(function(){
 		$('.js-popup-data').on('click', function(){
@@ -337,13 +359,12 @@ $(document).ready(function () {
 		var tab = $(this).parents('.form__cover').find('.tab__list .is-active').find('a').data('person');
 		var contPrice = $('.form__cover').find('.select__price').find('.price span');
 
-		console.log(tab,check)
 
 		if (form.valid()) {
 			steps.removeClass("is-visible").fadeOut();
 			step.fadeIn(200).addClass('is-visible');
 			step.find('.tab__list').find('a[data-person="'+tab+'"]').parent().addClass('is-active').siblings().removeClass('is-active').addClass('no-active');
-			step.find('.tab__menu-container').find('input[data-days="'+check+'"]').parents('.tab-item').show().addClass('visible').siblings().removeClass('visible').hide();
+			step.find('.tab__menu-container').find('input[data-days="'+check+'"]').parents('.tab-item').show().addClass('visible').siblings().removeClass('visible').hide().addClass('no-active');
 			step.find('.tab__menu-container').find('input[data-days="'+check+'"]').prop("checked",true).parents('.tab__menu-container').find('input:not(:checked)').prop("disabled", true);
 			contPrice.text(price + 'бел.руб.')
 			return false;
@@ -472,6 +493,16 @@ $(document).ready(function () {
 				menuMobile.removeClass('is-visible');
 				html.removeClass('space');
 			},700);
+		});
+	})();
+
+	//Form phone mask
+	(function(){
+		var mask = $('.js-phone');
+		mask.each(function(){
+			var this_ = $(this);
+
+			this_.mask("+000 (00) 000 00 00");
 		});
 	})();
 });
